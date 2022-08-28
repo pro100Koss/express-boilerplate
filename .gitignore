@@ -1,0 +1,9 @@
+/.idea
+/.env
+/.yarn-error.log
+/node_modules
+/data
+/dump
+/build
+/logs
+

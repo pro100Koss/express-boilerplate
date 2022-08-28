@@ -1,0 +1,28 @@
+version: '3'
+services:
+  mongo:
+    image: mongo:4.0.8
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/mongodb:/data/connectDatabase
+
+  aws-s3:
+    image: scality/s3server:6018536a
+    ports:
+      - 8000:8000
+    volumes:
+      - ./docker/aws-s3/config.json:/usr/src/app/config.json
+      - ./docker/aws-s3/healthcheck.sh:/usr/src/app/healthcheck.sh
+      - ./data/aws-s3/data:/usr/src/app/localData
+      - ./data/aws-s3/metadata:/usr/src/app/localMetadata
+    healthcheck:
+      test: ["CMD", "sh", "healthcheck.sh"]
+      interval: 15s
+      timeout: 30s
+      retries: 5
+
+volumes:
+  aws-s3-data:
+  aws-s3-metadata:
+  mongodb-data:
