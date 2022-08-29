@@ -1,4 +1,5 @@
-This is NodeJS boilerplate project which based on: 
+# This is NodeJS boilerplate project which based on:
+
  * express
  * typescript
  * mongoose
@@ -8,16 +9,18 @@ This is NodeJS boilerplate project which based on:
  * webpack
  * yarn
  * jest
+___
 
-#Setup project
 
-## Run mongodb and S3 with using docker-compose
+# Setup project
+
+### Run mongodb and S3 with using docker-compose
 ```
 docker-compose up -d
 ```
 
 ___
-## Configure local s3 (optional)
+### Configure local s3 (optional)
 You will have to configure `aws` with a dummy **Access Key** "accessKey1" and **Secret Access Key** "verySecretKey1". Leave everything else blank. See the following output as an example:
 
 ```
@@ -39,7 +42,7 @@ Add host to hosts file
 127.0.0.1       localhost
 ```
 ___
-## Create `.env` file configuration
+### Create `.env` file configuration
 For local env:
 ```
 PORT=3000
@@ -61,7 +64,7 @@ AWS_S3_BUCKET=example
 STORAGE_PATH=./storage
 ```
 
-For production you should use real AWS s3 configurations:
+For the production you should use real AWS s3 configurations:
 ```
 AWS_KEY_ID=
 AWS_KEY_SECRET=
